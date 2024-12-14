@@ -67,7 +67,7 @@
         <button v-if="uploadApiUrl" class="btn" @click="uploadImageToBackend">获取外链</button>
       </div>
     </div>
-    <canvas id="canvasPreview" width="1000" height="500"></canvas>
+    <canvas id="canvasPreview" :width="defaultConfig.width" :height="defaultConfig.height"></canvas>
     <!-- 自定义弹窗 -->
     <div class="custom-popup" :class="{ 'show': showPopup }">
       <div class="popup-content">

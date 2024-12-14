@@ -13,7 +13,7 @@ export const state = {
     shadowOffsetX: 1,
     shadowOffsetY: 1,
     watermark: defaultConfig.watermark,
-    textSize: 200,
+    textSize: 100,
     squareSize: 300,
     text: defaultConfig.text,
     bgBlur: 3,
@@ -32,10 +32,10 @@ const createCanvas = (width, height) => {
     return { canvas, ctx: canvas.getContext('2d') };
 };
 
-export const { canvas: bgCanvas, ctx: bgCtx } = createCanvas(1000, 500);
-export const { canvas: textCanvas, ctx: textCtx } = createCanvas(1000, 500);
-export const { canvas: watermarkCanvas, ctx: watermarkCtx } = createCanvas(1000, 500);
-export const { canvas: squareCanvas, ctx: squareCtx } = createCanvas(1000, 500);
+export const { canvas: bgCanvas, ctx: bgCtx } = createCanvas(defaultConfig.width, defaultConfig.height);
+export const { canvas: textCanvas, ctx: textCtx } = createCanvas(defaultConfig.width, defaultConfig.height);
+export const { canvas: watermarkCanvas, ctx: watermarkCtx } = createCanvas(defaultConfig.width, defaultConfig.height);
+export const { canvas: squareCanvas, ctx: squareCtx } = createCanvas(defaultConfig.width, defaultConfig.height);
 
 export function updateShadowPreset() {
     const preset = document.querySelector('input[name="shadowPreset"]:checked').value;
